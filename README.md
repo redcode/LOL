@@ -2,7 +2,7 @@
 Copyright © 2016 Manuel Sainz de Baranda y Goñi.  
 Released under the terms of the [MIT License](LICENSE).
 
-A small OOP library for Lua.
+A little OOP library for Lua.
 
 ### Demo
 ```
