@@ -7,19 +7,52 @@ A little OOP library for Lua.
 ### Demo
 ```
 require "LOL"
+```
 
--- Create a base class
+Create a base class
+```
 Hero = LOL.new_class()
+```
 
--- Create a derived class
+Create a derived class
+```
 BruceWillis = LOL.new_class(Hero)
+```
 
--- Create instances
+Create instances
+```
 hero = Hero:new()
 john_mcclane = BruceWillis:new()
+```
+
+Retrieve class object from instance
+```
+hero_class = hero.class
+```
+
+Call method of superclass
+```
+function Hero:kill_bad_guys()
+	print("Hero:kill_bad_guys()")
+end
+
+function BruceWillis:kill_bad_guys()
+	print("BruceWillis:kill_bad_guys()")
+	BruceWillis.super.kill_bad_guys(self)
+end
+```
+
+Access to class variables from the instance
+```
+john_mcclane.class.will_be_in_die_hard_6 = false
+
+print(	"Willis will " ..
+	(BruceWillis.will_be_in_die_hard_6 and "" or "not ") ..
+	"be in Die Hard 4"
+)
 ```  
 
-### Test
+### Introspection Tests
 ```
 Base class
 ----------
