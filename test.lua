@@ -1,10 +1,20 @@
 require "LOL"
 
 Hero = LOL.new_class()
-hero = Hero:new()
+
+function Hero:initialize(name)
+	self.name = name
+end
 
 BruceWillis = LOL.new_class(Hero)
-john_mcclane = BruceWillis:new()
+
+function BruceWillis:initialize(name, film)
+	BruceWillis.super.initialize(self, name)
+	self.film = film
+end
+
+hero = Hero:new()
+john_mcclane = BruceWillis:new("John McClane", "Die Hard")
 
 print("\nBase class\n----------")
 print("  Hero:is_class()    => " .. tostring(Hero:is_class()))

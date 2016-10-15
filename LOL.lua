@@ -44,7 +44,7 @@ end
 
 function LOL.base_class:is_ancestor_of(class)
 	if self:is_instance() then self = self.class end
-	local class = class.super
+	class = class.super
 	while class do
 		if class == self then return true end
 		class = class.super

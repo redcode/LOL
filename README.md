@@ -19,10 +19,22 @@ Create a derived class
 BruceWillis = LOL.new_class(Hero)
 ```
 
+Declare constructors (optional)
+```
+function Hero:initialize(name)
+	self.name = name
+end
+
+function BruceWillis:initialize(name, film)
+	BruceWillis.super.initialize(self, name)
+	self.film = film
+end
+```
+
 Create instances
 ```
 hero = Hero:new()
-john_mcclane = BruceWillis:new()
+john_mcclane = BruceWillis:new("John McClane", "Die Hard")
 ```
 
 Retrieve class object from instance
