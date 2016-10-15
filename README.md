@@ -5,22 +5,22 @@ Released under the terms of the [MIT License](LICENSE).
 A little OOP library for Lua.
 
 ### Demo
-```
+```lua
 require "LOL"
 ```
 
 Create a base class
-```
+```lua
 Hero = LOL.new_class()
 ```
 
 Create a derived class
-```
+```lua
 BruceWillis = LOL.new_class(Hero)
 ```
 
 Declare constructors (optional)
-```
+```lua
 function Hero:initialize(name)
 	self.name = name
 end
@@ -32,18 +32,18 @@ end
 ```
 
 Create instances
-```
+```lua
 hero = Hero:new()
 john_mcclane = BruceWillis:new("John McClane", "Die Hard")
 ```
 
 Retrieve class object from instance
-```
+```lua
 hero_class = hero.class
 ```
 
 Call method of superclass
-```
+```lua
 function Hero:kill_bad_guys()
 	print("Hero:kill_bad_guys()")
 end
@@ -55,7 +55,7 @@ end
 ```
 
 Access to class variables from the instance
-```
+```lua
 john_mcclane.class.will_be_in_die_hard_6 = false
 
 print(	"Willis will " ..
